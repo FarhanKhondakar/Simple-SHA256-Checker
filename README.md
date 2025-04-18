@@ -48,7 +48,7 @@ cosign verify-blob sha256-hash-checker_0.1.0_x64_en-US.msi `
     --certificate-identity "farhan.khondakar@gmail.com"
 ```
 
-### Command Prompot
+### Command Prompt
 ```cmd
 :: Verify the .exe file
 cosign verify-blob sha256-hash-checker.exe ^
