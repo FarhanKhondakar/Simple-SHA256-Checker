@@ -36,6 +36,7 @@ cosign verify-blob sha256-hash-checker.exe `
     --bundle sha256-hash-checker-v1.0.0-windows-exe.bundle `
     --certificate-oidc-issuer "https://github.com/login/oauth" `
     --certificate-identity "farhan.khondakar@gmail.com"
+```
 
 ```powershell
 # Verify the .msi file
@@ -43,3 +44,4 @@ cosign verify-blob sha256-hash-checker_0.1.0_x64_en-US.msi `
     --bundle sha256-hash-checker-v1.0.0-windows-msi.bundle `
     --certificate-oidc-issuer "https://github.com/login/oauth" `
     --certificate-identity "farhan.khondakar@gmail.com"
+```
