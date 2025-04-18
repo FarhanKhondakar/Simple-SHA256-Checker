@@ -21,8 +21,24 @@ The **Simple SHA256 Checker** allows you to easily verify the integrity of files
 2. **Download and Select Trusted Hash List**: Download a TXT list of known trusted SHA256 hashes from [Bazaar Abuse](https://bazaar.abuse.ch/export/), and upload it into the tool.
 3. **Recursive Scan**: The tool will recursively scan all **EXE** and **DLL** files in the selected directory and its subdirectories.
 4. **Generate SHA256 Hash**: The tool computes the SHA256 hash for each selected file.
-5. **Compare with Trusted Hashes**: The tool compares each computed hash against the provided list of trusted SHA256 hashes. If the file’s computed hash matches any of the trusted hashes, it is considered safe. If no match is found, the file might be compromised.
+5. **Compare with Trusted Hashes**: The tool compares each computed hash against the provided list of trusted SHA256 hashes. If the file's computed hash matches any of the trusted hashes, it is considered safe. If no match is found, the file might be compromised.
 
 ---
 
-**Note**: This tool is not designed for advanced malware analysis or in-depth security assessments. It’s a simple utility for basic integrity checks.
+## Signature Verification with Cosign
+
+You can verify the authenticity of the executables using `cosign`:
+
+### PowerShell
+```powershell
+# Verify the .exe file
+cosign verify-blob sha256-hash-checker.exe `
+    --bundle sha256-hash-checker-v1.0.0-windows-exe.bundle `
+    --certificate-oidc-issuer "https://github.com/login/oauth" `
+    --certificate-identity "farhan.khondakar@gmail.com"
+
+# Verify the .msi file
+cosign verify-blob sha256-hash-checker_0.1.0_x64_en-US.msi `
+    --bundle sha256-hash-checker-v1.0.0-windows-msi.bundle `
+    --certificate-oidc-issuer "https://github.com/login/oauth" `
+    --certificate-identity "farhan.khondakar@gmail.com"
