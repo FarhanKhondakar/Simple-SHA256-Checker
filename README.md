@@ -31,7 +31,7 @@ The **Simple SHA256 Checker** allows you to easily verify the integrity of files
 
 All releases are signed using [Sigstore's cosign](https://www.sigstore.dev) for authenticity verification.
 
-📖 [View cosign documentation](https://docs.sigstore.dev/cosign/overview/)
+📖 [View cosign documentation](https://docs.sigstore.dev/)
 
 ### PowerShell
 ```powershell
