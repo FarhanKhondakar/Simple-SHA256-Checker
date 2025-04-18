@@ -4,6 +4,8 @@
 
 The **Simple SHA256 Checker** allows you to easily verify the integrity of files by comparing their SHA256 hash values against known malicious hashes. It is a straightforward solution for detecting obvious malicious code, **obviously not intended for advanced security analysis**.
 
+⚠️ **Note:** This is not a full antivirus solution - it only checks for exact hash matches against known malicious files.
+
 ---
 
 ## Features
@@ -43,5 +45,22 @@ cosign verify-blob sha256-hash-checker.exe `
 cosign verify-blob sha256-hash-checker_0.1.0_x64_en-US.msi `
     --bundle sha256-hash-checker-v1.0.0-windows-msi.bundle `
     --certificate-oidc-issuer "https://github.com/login/oauth" `
+    --certificate-identity "farhan.khondakar@gmail.com"
+```
+
+### Command Prompot
+```cmd
+:: Verify the .exe file
+cosign verify-blob sha256-hash-checker.exe ^
+    --bundle sha256-hash-checker-v1.0.0-windows-exe.bundle ^
+    --certificate-oidc-issuer "https://github.com/login/oauth" ^
+    --certificate-identity "farhan.khondakar@gmail.com"
+```
+
+```cmd
+:: Verify the .msi installer
+cosign verify-blob sha256-hash-checker_0.1.0_x64_en-US.msi ^
+    --bundle sha256-hash-checker-v1.0.0-windows-msi.bundle ^
+    --certificate-oidc-issuer "https://github.com/login/oauth" ^
     --certificate-identity "farhan.khondakar@gmail.com"
 ```
