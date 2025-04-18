@@ -27,9 +27,11 @@ The **Simple SHA256 Checker** allows you to easily verify the integrity of files
 
 ---
 
-## Signature Verification with Cosign
+## [Signature Verification with Cosign](https://www.sigstore.dev/)
 
-You can verify the authenticity of the executables using `cosign`:
+All releases are signed using [Sigstore's cosign](https://www.sigstore.dev) for authenticity verification.
+
+📖 [View cosign documentation](https://docs.sigstore.dev/cosign/overview/)
 
 ### PowerShell
 ```powershell
